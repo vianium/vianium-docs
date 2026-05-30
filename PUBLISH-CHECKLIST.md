@@ -199,7 +199,7 @@ If you don't already have GitHub Sponsors enabled on the
 3. Create at least one tier (e.g. $5/month "Coffee" + $25/month
    "Supporter") so the existing FUNDING.yml link resolves.
 
-The FUNDING.yml across all 20 repos already points at this profile,
+The FUNDING.yml across all 26 repos already points at this profile,
 so once Sponsors is live, every Sponsor button across the org becomes
 clickable simultaneously.
 

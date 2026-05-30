@@ -1,7 +1,7 @@
 # Vianium Architecture Overview
 
 Vianium is split into three repository tiers plus a meta tier, totaling
-23 repositories (8 Tier 1, 8 Tier 2, 5 Tier 3, 2 Meta).
+26 repositories (10 Tier 1, 8 Tier 2, 6 Tier 3, 2 Meta).
 
 ## Tiers
 
@@ -22,6 +22,8 @@ be consumed from C# expose a WinRT projection. See
 | `vianium-http` | C++ native + WinRT projection | HTTP/1.1, HTTP/2, connection pool, HSTS, RFC 6455 WebSocket client |
 | `vianium-grpc` | C# managed | gRPC framing, HPACK, HTTP/2 stream multiplexing; calls `vianium-tls` via WinRT |
 | `vianium-audio` | C++/CX WinRT component | Real-time microphone capture and speaker playback (WASAPI), PCM resampling |
+| `vianium-fs` | C++ native + WinRT projection | Win32-backed filesystem engine (volumes, enumeration, copy/move/delete) for WP8.1, which sandboxes raw Win32 calls |
+| `vianium-icons` | C# managed | Fluent UI System Icons font + ~9000 strongly typed glyph codepoints + file-extension-to-icon mapping; vendors `FluentSystemIcons-Regular.ttf` (MIT, microsoft/fluentui-system-icons) |
 
 ### Tier 2 — Domain protocols and libraries (Apache 2.0)
 
@@ -49,6 +51,7 @@ End-user products, all authored and maintained by **Angel Careaga**.
 | `vianium-music` | A native music player with YouTube Music streaming |
 | `vianium-localsend` | A LocalSend P2P file-sharing client for local networks |
 | `vianium-chat` | A native multi-provider AI chat client (Gemini, ChatGPT) with text and real-time voice |
+| `vianium-explorer` | A full-system / archive file explorer for WP8.1 (consumes `vianium-fs` and `vianium-icons`) |
 
 ### Meta (Apache 2.0)
 
@@ -83,6 +86,9 @@ flowchart TD
     audio["vianium-audio"]
     genai["vianium-genai"]
     chat["vianium-chat"]
+    fs["vianium-fs"]
+    icons["vianium-icons"]
+    explorer["vianium-explorer"]
 
     kernel --> crypto
     kernel --> tls
@@ -139,6 +145,13 @@ flowchart TD
     audio --> chat
     http --> chat
     mkernel --> chat
+
+    mkernel --> fs
+    mkernel --> icons
+
+    mkernel --> explorer
+    fs --> explorer
+    icons --> explorer
 ```
 
 Arrow direction: `A --> B` means "A is used by B" (i.e. B depends on
@@ -168,10 +181,13 @@ workspace/
   vianium-innertube/
   vianium-store/
   vianium-genai/
+  vianium-fs/
+  vianium-icons/
   vianium-browser/
   vianigram/
   vianium-music/
   vianium-chat/
+  vianium-explorer/
   vianium-docs/
 ```
 
@@ -212,6 +228,9 @@ that managed consumers can use directly:
 - `vianium-image-palette` (already C++/CX) — projected for
   `vianium-music` and `vianium-browser` (favicon color extraction)
 - `vianium-innertube` (already C++/CX) — projected for `vianium-music`
+- `vianium-fs` — projected for `vianium-explorer` (Win32 filesystem under the
+  `windowsPhoneApp` partition needs a thin C++ shim that hides
+  `extern "C"` declarations of `CreateFileW` / `FindFirstFileExW` etc.)
 
 `vianium-kernel`, `vianium-crypto`, `vianium-net`, and `vianium-http`
 are pure native C++ today. They gain a WinRT projection only when a

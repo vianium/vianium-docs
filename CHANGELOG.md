@@ -13,10 +13,26 @@ heading.
 ## [Unreleased]
 
 ### Added
-- _Track new features here._
+- `architecture-overview.md`: registered three new repositories in the
+  ecosystem manifest — `vianium-fs` (Tier 1, C++ + WinRT projection
+  filesystem engine), `vianium-icons` (Tier 1, managed Fluent UI System
+  Icons catalog with bundled font), and `vianium-explorer` (Tier 3,
+  product app that consumes both). Updated the workspace tree, the
+  Mermaid dependency graph, and the WinRT-projection list.
 
 ### Changed
-- _Track changes to existing behaviour._
+- Ecosystem-wide repo count bumped from **20 → 26** across the
+  canonical references: `licensing-policy.md` (tier tables and
+  aggregate), `getting-started.md` (workspace tree and clone block),
+  `announcement.md` (intro line, tier table, "in rough order"),
+  `community.md` (product list and welcome message), and
+  `PUBLISH-CHECKLIST.md` (FUNDING.yml reference).
+- `adr/0005-component-architecture-standard.md`: scope updated from
+  **18 → 24** code repositories, conformance table extended with the
+  six new entries (`vianium-audio` Cat 3, `vianium-genai` Cat 2,
+  `vianium-fs` Cat 3, `vianium-icons` Cat 1, `vianium-chat` Cat 4,
+  `vianium-explorer` Cat 4), and the per-category repo lists rebuilt
+  accordingly. The five known debt items remain unchanged.
 
 ### Deprecated
 - _Track soon-to-be-removed surfaces._

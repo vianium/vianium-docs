@@ -21,6 +21,9 @@ workspace/
   vianium-net/
   vianium-http/
   vianium-grpc/
+  vianium-audio/
+  vianium-fs/
+  vianium-icons/
 
   vianium-mtproto/          Tier 2 domain (Apache 2.0)
   vianium-mtproxy/
@@ -29,14 +32,17 @@ workspace/
   vianium-image-palette/
   vianium-innertube/
   vianium-store/
+  vianium-genai/
 
   vianium-browser/          Tier 3 product (PolyForm-Noncommercial-1.0.0)
   vianigram/
   vianium-music/
   vianium-localsend/
+  vianium-chat/
+  vianium-explorer/
 ```
 
-Twenty repos total: 7 foundation + 7 domain + 4 products + 2 meta.
+Twenty-six repos total: 10 foundation + 8 domain + 6 products + 2 meta.
 
 You can clone only the repos you need to work on, plus their transitive
 dependencies. The
@@ -60,6 +66,9 @@ git clone https://github.com/vianium/vianium-tls.git
 git clone https://github.com/vianium/vianium-net.git
 git clone https://github.com/vianium/vianium-http.git
 git clone https://github.com/vianium/vianium-grpc.git
+git clone https://github.com/vianium/vianium-audio.git
+git clone https://github.com/vianium/vianium-fs.git
+git clone https://github.com/vianium/vianium-icons.git
 
 # Domain (Tier 2, Apache 2.0) — only the ones you need
 git clone https://github.com/vianium/vianium-mtproto.git
@@ -69,12 +78,15 @@ git clone https://github.com/vianium/vianium-media.git
 git clone https://github.com/vianium/vianium-image-palette.git
 git clone https://github.com/vianium/vianium-innertube.git
 git clone https://github.com/vianium/vianium-store.git
+git clone https://github.com/vianium/vianium-genai.git
 
 # Products (Tier 3, PolyForm Noncommercial 1.0.0) — pick what you want
 git clone https://github.com/vianium/vianium-browser.git
 git clone https://github.com/vianium/vianigram.git
 git clone https://github.com/vianium/vianium-music.git
 git clone https://github.com/vianium/vianium-localsend.git
+git clone https://github.com/vianium/vianium-chat.git
+git clone https://github.com/vianium/vianium-explorer.git
 
 # Docs
 git clone https://github.com/vianium/vianium-docs.git

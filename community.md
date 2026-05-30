@@ -1,12 +1,14 @@
 # Community
 
-Vianium runs a small community space focused on the four end-user
+Vianium runs a small community space focused on the six end-user
 products in the ecosystem:
 
 - [`vianium-browser`](https://github.com/vianium/vianium-browser)
 - [`vianigram`](https://github.com/vianium/vianigram)
 - [`vianium-music`](https://github.com/vianium/vianium-music)
 - [`vianium-localsend`](https://github.com/vianium/vianium-localsend)
+- [`vianium-chat`](https://github.com/vianium/vianium-chat)
+- [`vianium-explorer`](https://github.com/vianium/vianium-explorer)
 
 The internal libraries (Tier 1 and Tier 2) are discussed on GitHub
 issues, pull requests, and discussions. The community space exists for
@@ -58,7 +60,7 @@ channel:
 
 - `#welcome` — rules, links, reaction roles, permanent invite.
 - `#announcements` — announcement channel for releases and news; read-only for members.
-- `#roadmap` — current phase status across the four products.
+- `#roadmap` — current phase status across the six products.
 - `#governance` — discussion preceding new ADRs in `vianium-docs`.
 
 **Community**
@@ -108,7 +110,7 @@ be added later based on demand.
 
 **Shared**
 
-- `#internals-libs` — single channel for discussion of the 14 internal libraries.
+- `#internals-libs` — single channel for discussion of the 18 internal libraries.
 - `#design-feedback` — UX and UI mockup feedback.
 
 **Private** (Founder + Maintainers only)
@@ -131,7 +133,7 @@ be added later based on demand.
 
 ## Licensing reminder
 
-The four products are licensed under
+The six products are licensed under
 **PolyForm Noncommercial 1.0.0**, unlike the Tier 1 and Tier 2
 libraries which are Apache 2.0. Contributions to the products are
 accepted under the terms of each repository's `CONTRIBUTING.md` and
@@ -158,12 +160,14 @@ Pinned in `#welcome`.
 Welcome to the Vianium community.
 
 Vianium is a clean-room native ecosystem for Windows Phone 8.1 and
-Windows 10 Mobile, built around four products:
+Windows 10 Mobile, built around six products:
 
   • Vianium Browser   — github.com/vianium/vianium-browser
   • Vianigram         — github.com/vianium/vianigram
   • Vianium Music     — github.com/vianium/vianium-music
   • Vianium LocalSend — github.com/vianium/vianium-localsend
+  • Vianium Chat      — github.com/vianium/vianium-chat
+  • Vianium Explorer  — github.com/vianium/vianium-explorer
 
 Before posting:
 
@@ -209,7 +213,7 @@ Server rules
 6. Do not post security disclosures publicly. Follow SECURITY.md:
    github.com/vianium/vianium-docs/blob/main/SECURITY.md
 
-7. The four products are licensed under PolyForm Noncommercial 1.0.0.
+7. The six products are licensed under PolyForm Noncommercial 1.0.0.
    Forks or builds for commercial use require a separate licence.
    Contact hello@angelcareaga.com.
 

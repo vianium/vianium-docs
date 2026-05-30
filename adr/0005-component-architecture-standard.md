@@ -6,12 +6,12 @@
 | Date | 2026-05-19 |
 | Decider | Angel Careaga |
 | Supersedes | (none) |
-| Affects | All 18 code repositories in the Vianium org |
+| Affects | All 24 code repositories in the Vianium org |
 
 ## Context
 
-The Vianium org holds 18 code repositories across three tiers (7
-foundation, 7 domain, 4 products). An audit of their *internal*
+The Vianium org holds 24 code repositories across three tiers (10
+foundation, 8 domain, 6 products). An audit of their *internal*
 organization found the architectural pattern varies repo to repo:
 
 - Some are **flat** — files grouped by technical family, no layering
@@ -37,7 +37,7 @@ The naive fix — mandate one pattern (full Hexagonal + DDD) everywhere
 — is **wrong**. A library of AES/SHA primitives has no business
 domain; a `domain/` + `ports/` skeleton over it is pure ceremony that
 makes the code *harder* to read, not easier. The right fix recognizes
-that the 18 repos are not all the same *kind* of component.
+that the 24 repos are not all the same *kind* of component.
 
 ## Decision
 
@@ -55,7 +55,7 @@ fast implementations of well-defined operations.
 - **Pattern: Flat.** Source grouped by technical family. No
   `domain/` / `application/` / `ports/` layers — they would be noise.
 - **Repos:** `vianium-kernel`, `vianium-crypto`,
-  `vianium-managed-kernel`, `vianium-grpc`.
+  `vianium-managed-kernel`, `vianium-grpc`, `vianium-icons`.
 
 ### Category 2 — Protocol / domain library
 
@@ -72,7 +72,7 @@ objects, and use cases worth isolating from I/O.
   - `api/v1/` — the public, versioned surface
 - **Repos:** `vianium-tls`, `vianium-http`, `vianium-net`,
   `vianium-mtproto`, `vianium-mtproxy`, `vianium-voip`,
-  `vianium-store`.
+  `vianium-store`, `vianium-genai`.
 
 ### Category 3 — Algorithm + platform adapter
 
@@ -86,8 +86,8 @@ surface to warrant the full Category 2 layering.
   (`winrt/`, `mft/`). This *is* a Hexagonal split — `core/` is the
   hexagon, the adapters are the driving/driven sides — expressed
   without ceremony.
-- **Repos:** `vianium-media`, `vianium-image-palette`,
-  `vianium-innertube`.
+- **Repos:** `vianium-audio`, `vianium-media`, `vianium-image-palette`,
+  `vianium-innertube`, `vianium-fs`.
 
 ### Category 4 — Product application
 
@@ -100,7 +100,7 @@ playback, bookmarks, …).
   `Infrastructure/`, `Composition/`. The shell app and tests live
   under `Clients/`.
 - **Repos:** `vianium-browser`, `vianigram`, `vianium-music`,
-  `vianium-localsend`.
+  `vianium-localsend`, `vianium-chat`, `vianium-explorer`.
 
 ### Conformance table
 
@@ -110,22 +110,28 @@ playback, bookmarks, …).
 | vianium-crypto | 1 Technical primitive | ✅ |
 | vianium-managed-kernel | 1 Technical primitive | ✅ |
 | vianium-grpc | 1 Technical primitive | ✅ |
+| vianium-icons | 1 Technical primitive | ✅ |
 | vianium-net | 2 Protocol/domain | ✅ |
 | vianium-mtproto | 2 Protocol/domain | ✅ |
 | vianium-voip | 2 Protocol/domain | ✅ |
+| vianium-genai | 2 Protocol/domain | ✅ |
 | vianium-tls | 2 Protocol/domain | ⚠️ debt — has `domain/`, missing `application/` + `ports/` |
 | vianium-http | 2 Protocol/domain | ⚠️ debt — has `domain/`, missing `application/` + `ports/` |
 | vianium-mtproxy | 2 Protocol/domain | ⚠️ debt — has `domain/` + `infrastructure/`, missing `ports/` + `application/` |
 | vianium-store | 2 Protocol/domain | ⚠️ debt — flat-by-technical (`Auth/`, `Cache/`, `Grpc/`, …) |
+| vianium-audio | 3 Algorithm + adapter | ✅ |
 | vianium-media | 3 Algorithm + adapter | ✅ |
 | vianium-image-palette | 3 Algorithm + adapter | ✅ |
 | vianium-innertube | 3 Algorithm + adapter | ✅ |
+| vianium-fs | 3 Algorithm + adapter | ✅ |
 | vianium-browser | 4 Product app | ✅ |
 | vianigram | 4 Product app | ✅ |
 | vianium-music | 4 Product app | ✅ |
+| vianium-chat | 4 Product app | ✅ |
+| vianium-explorer | 4 Product app | ✅ |
 | vianium-localsend | 4 Product app | ⚠️ debt — single flat project, no bounded contexts |
 
-13 of 18 repos conform today. The 5 marked ⚠️ are **known,
+19 of 24 repos conform today. The 5 marked ⚠️ are **known,
 documented technical debt** — see "Technical debt" below.
 
 ## Consequences

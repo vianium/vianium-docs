@@ -7,7 +7,7 @@ After a year of writing native libraries and apps for **Windows Phone 8.1**
 in isolation, I'm releasing the underlying work as the
 [**Vianium**](https://github.com/vianium) open-source ecosystem.
 
-Twenty repositories. Four tiers. Two licenses. One person.
+Twenty-six repositories. Four tiers. Two licenses. One person.
 
 ---
 
@@ -21,9 +21,9 @@ browser does not exist** — until now.
 
 | Tier | Repos | License | Description |
 |---|---|---|---|
-| 1 — Foundation | 7 | Apache 2.0 | `vianium-kernel` (allocator, Result, base types), `vianium-crypto` (AES, SHA, BigNum, ECDH), `vianium-tls` (TLS 1.3 Mozilla Modern), `vianium-net` (sockets, DNS, DoH), `vianium-http` (HTTP/1.1, HTTP/2, HPACK), `vianium-grpc` (managed gRPC over HTTP/2), `vianium-managed-kernel` (managed analogue of `vianium-kernel`) |
-| 2 — Domain | 7 | Apache 2.0 | `vianium-mtproto` (Telegram MTProto 2.0 + TL), `vianium-mtproxy` (obfuscated transport), `vianium-voip` (RTP/SRTP, Opus, libtgvoip wrapper), `vianium-media` (image + audio + video decoders, FFmpeg LGPL), `vianium-image-palette` (image palette extraction), `vianium-innertube` (YouTube Innertube API), `vianium-store` (Firestore SDK + samples) |
-| 3 — Products | 4 | PolyForm Noncommercial 1.0.0 | `vianigram` (Telegram client), `vianium-browser` (web browser), `vianium-music` (YouTube Music client), `vianium-localsend` (LocalSend protocol v2 client) |
+| 1 — Foundation | 10 | Apache 2.0 | `vianium-kernel` (allocator, Result, base types), `vianium-crypto` (AES, SHA, BigNum, ECDH), `vianium-tls` (TLS 1.3 Mozilla Modern), `vianium-net` (sockets, DNS, DoH), `vianium-http` (HTTP/1.1, HTTP/2, HPACK), `vianium-grpc` (managed gRPC over HTTP/2), `vianium-managed-kernel` (managed analogue of `vianium-kernel`), `vianium-audio` (WASAPI capture/playback, PCM resampling), `vianium-fs` (Win32 filesystem engine with WinRT projection), `vianium-icons` (Fluent UI System Icons font + catalog) |
+| 2 — Domain | 8 | Apache 2.0 | `vianium-mtproto` (Telegram MTProto 2.0 + TL), `vianium-mtproxy` (obfuscated transport), `vianium-voip` (RTP/SRTP, Opus, libtgvoip wrapper), `vianium-media` (image + audio + video decoders, FFmpeg LGPL), `vianium-image-palette` (image palette extraction), `vianium-innertube` (YouTube Innertube API), `vianium-store` (Firestore SDK + samples), `vianium-genai` (provider-neutral AI chat client — Gemini, OpenAI) |
+| 3 — Products | 6 | PolyForm Noncommercial 1.0.0 | `vianigram` (Telegram client), `vianium-browser` (web browser), `vianium-music` (YouTube Music client), `vianium-localsend` (LocalSend protocol v2 client), `vianium-chat` (multi-provider AI chat client), `vianium-explorer` (file explorer for WP8.1) |
 | Meta | 2 | Apache 2.0 | `vianium-docs` (architecture, ADRs, getting-started), `.github` (org profile + default community files) |
 
 ---
@@ -51,11 +51,11 @@ Three reasons:
 
 ## How the licensing works
 
-The **foundation and domain libraries** (14 repos) are **Apache 2.0**.
+The **foundation and domain libraries** (18 repos) are **Apache 2.0**.
 You can include them in any product, commercial or otherwise, with
 attribution. Use them, build with them, sell with them.
 
-The **products** (4 repos) are **PolyForm Noncommercial 1.0.0**.
+The **products** (6 repos) are **PolyForm Noncommercial 1.0.0**.
 You can read the source, modify it, distribute modifications, and use
 it for personal, educational, or non-commercial purposes. Commercial
 use of a product (e.g. selling a Telegram client built on `vianigram`)
@@ -117,7 +117,7 @@ buttons are wired into every repo's `.github/FUNDING.yml`.
 
 In rough order:
 
-1. **Stabilisation.** v0.1.0 across all 20 repos, then sweep for
+1. **Stabilisation.** v0.1.0 across all 26 repos, then sweep for
    field-reported breakage.
 2. **Documentation.** ADRs landed; tutorials missing. The
    [vianium-docs](https://github.com/vianium/vianium-docs) tree will

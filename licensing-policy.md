@@ -9,12 +9,12 @@ operational rules.
 
 | Tier | Purpose | Repositories | License |
 |---|---|---|---|
-| 1 | Foundation libraries | `vianium-kernel`, `vianium-managed-kernel`, `vianium-crypto`, `vianium-tls`, `vianium-net`, `vianium-http`, `vianium-grpc` | Apache-2.0 |
-| 2 | Domain protocols and libraries | `vianium-mtproto`, `vianium-mtproxy`, `vianium-voip`, `vianium-media`, `vianium-image-palette`, `vianium-innertube`, `vianium-store` | Apache-2.0 |
-| 3 | Products | `vianium-browser`, `vianigram`, `vianium-music`, `vianium-localsend` | PolyForm-Noncommercial-1.0.0 |
+| 1 | Foundation libraries | `vianium-kernel`, `vianium-managed-kernel`, `vianium-crypto`, `vianium-tls`, `vianium-net`, `vianium-http`, `vianium-grpc`, `vianium-audio`, `vianium-fs`, `vianium-icons` | Apache-2.0 |
+| 2 | Domain protocols and libraries | `vianium-mtproto`, `vianium-mtproxy`, `vianium-voip`, `vianium-media`, `vianium-image-palette`, `vianium-innertube`, `vianium-store`, `vianium-genai` | Apache-2.0 |
+| 3 | Products | `vianium-browser`, `vianigram`, `vianium-music`, `vianium-localsend`, `vianium-chat`, `vianium-explorer` | PolyForm-Noncommercial-1.0.0 |
 | Meta | Org metadata, docs | `.github`, `vianium-docs` | Apache-2.0 |
 
-**Aggregate:** 20 repositories — 14 Apache-2.0 (7 foundation + 7 domain), 4 PolyForm-Noncommercial-1.0.0 (products), 2 Apache-2.0 meta.
+**Aggregate:** 26 repositories — 18 Apache-2.0 (10 foundation + 8 domain), 6 PolyForm-Noncommercial-1.0.0 (products), 2 Apache-2.0 meta.
 
 ## Why two licenses
 
